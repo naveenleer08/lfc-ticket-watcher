@@ -1,0 +1,72 @@
+name: Watch LFC tickets
+
+on:
+  schedule:
+    # Every 15 minutes. GitHub delays scheduled runs under load, sometimes by
+    # several minutes, which is why the watcher warns ahead of published times
+    # rather than trying to catch the exact moment a sale flips open.
+    - cron: '*/15 * * * *'
+  workflow_dispatch:
+    inputs:
+      test_email:
+        description: 'Send a test email instead of checking'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+# Never let two runs update state.json at once.
+concurrency:
+  group: lfc-watcher
+  cancel-in-progress: false
+
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Send test email
+        if: inputs.test_email
+        env:
+          SMTP_HOST: ${{ secrets.SMTP_HOST }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT }}
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASS: ${{ secrets.SMTP_PASS }}
+          MAIL_TO: ${{ secrets.MAIL_TO }}
+          MAIL_FROM: ${{ secrets.MAIL_FROM }}
+        run: node src/index.js --test-email
+
+      - name: Check for ticket sales
+        if: ${{ !inputs.test_email }}
+        env:
+          SMTP_HOST: ${{ secrets.SMTP_HOST }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT }}
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASS: ${{ secrets.SMTP_PASS }}
+          MAIL_TO: ${{ secrets.MAIL_TO }}
+          MAIL_FROM: ${{ secrets.MAIL_FROM }}
+        run: node src/index.js
+
+      - name: Save what we saw
+        if: ${{ !inputs.test_email }}
+        run: |
+          if [ -n "$(git status --porcelain state.json)" ]; then
+            git config user.name  "lfc-ticket-watcher"
+            git config user.email "actions@github.com"
+            git add state.json
+            git commit -m "state: $(date -u '+%Y-%m-%d %H:%M') UTC"
+            # Another run may have pushed while this one was working.
+            git pull --rebase --autostash origin "${GITHUB_REF_NAME}"
+            git push origin "HEAD:${GITHUB_REF_NAME}"
+          else
+            echo "No change."
+          fi

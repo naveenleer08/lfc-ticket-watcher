@@ -1,0 +1,18 @@
+{
+  "_comment": "Which sales to alert on, and how far ahead to warn you.",
+
+  "watchTitlePatterns": [
+    "additional members sale"
+  ],
+
+  "_watchTitlePatterns_note": "Case-insensitive substring match against the sale's title on the LFC match page. Add 'all red members ticket sale' if you also want alerts on the twice-yearly ballot sale.",
+
+  "onlyOpponents": [],
+  "_onlyOpponents_note": "Empty = every men's home game at Anfield. Otherwise e.g. [\"fulham\", \"arsenal\"] to narrow it down.",
+
+  "reminderLeadMinutes": [1440, 60, 10],
+  "_reminderLeadMinutes_note": "Advance warnings before a registration window opens or a sale starts: 24 hours, 1 hour, 10 minutes.",
+
+  "heartbeatDays": 7,
+  "_heartbeatDays_note": "Send a short 'still watching, nothing new' email at most this often, so silence is never ambiguous. 0 disables it."
+}

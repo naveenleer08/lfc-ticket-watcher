@@ -1,0 +1,17 @@
+{
+  "name": "lfc-ticket-watcher",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Watches Liverpool FC match pages for Additional Members Sale registration windows and emails an alert.",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "check": "node src/index.js --dry-run",
+    "test-email": "node src/index.js --test-email"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0",
+    "nodemailer": "^6.9.14"
+  }
+}
