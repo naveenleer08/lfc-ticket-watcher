@@ -5,7 +5,7 @@ import { dirname, join } from 'node:path';
 import { fetchHomeFixtures, fetchMatch, isLive, isFinished } from './lfc.js';
 import { loadState, saveState, itemKey } from './state.js';
 import { londonToDate, formatLondon, humanCountdown } from './time.js';
-import { sendEmail } from './notify.js';
+import { notify, channel } from './notify.js';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const STATE_PATH = join(ROOT, 'state.json');
@@ -25,6 +25,12 @@ function raise(priority, subject, lines) {
 function matchesAny(title, patterns) {
   const t = title.toLowerCase();
   return patterns.some((p) => t.includes(p.toLowerCase()));
+}
+
+// The sale blurb is multi-line; each paragraph must be its own entry so both
+// the issue markdown and the email HTML break it correctly.
+function bodyLines(body) {
+  return body ? body.split('\n') : [];
 }
 
 function isRegistration(title) {
@@ -93,7 +99,7 @@ async function main() {
               ? `Opens: ${formatLondon(whenDate)} (${humanCountdown(whenDate - now)})`
               : 'No time published yet.',
             '',
-            item.body || '',
+            ...bodyLines(item.body),
             '',
             match.url,
           ]
@@ -106,7 +112,7 @@ async function main() {
             `${before.statusLabel || before.statusSlug} -> ${item.statusLabel || item.statusSlug}`,
           ];
           if (live) lines.push('This is live right now.');
-          lines.push('', item.body || '', '', match.url);
+          lines.push('', ...bodyLines(item.body), '', match.url);
           raise(
             live ? 'critical' : isFinished(item.statusSlug) ? 'low' : 'high',
             live
@@ -142,7 +148,7 @@ async function main() {
                 `# ${label}`,
                 `${isRegistration(item.title) ? 'Registration opens' : 'Sale starts'} ${formatLondon(whenDate)}.`,
                 '',
-                item.body || '',
+                ...bodyLines(item.body),
                 '',
                 match.url,
               ]
@@ -215,7 +221,7 @@ async function finish(state, bootstrap, seen, config) {
     }
     lines.push(
       '',
-      'You will get an email as soon as a new registration window appears, and reminders before it opens.'
+      'You will be alerted as soon as a new registration window appears, and again before it opens.'
     );
     alerts.length = 0;
     raise('normal', 'LFC ticket watcher started', lines);
@@ -269,17 +275,17 @@ async function deliver() {
       console.log(`\n=== [${alert.priority}] ${alert.subject} ===\n${alert.lines.join('\n')}`);
       continue;
     }
-    await sendEmail(alert);
+    await notify(alert);
     console.log(`sent: [${alert.priority}] ${alert.subject}`);
   }
 }
 
 // ---------------------------------------------------------------------------
 
-if (process.argv.includes('--test-email')) {
-  await sendEmail({
+if (process.argv.includes('--test')) {
+  await notify({
     priority: 'normal',
-    subject: 'LFC ticket watcher - test email',
+    subject: 'LFC ticket watcher - test alert',
     lines: [
       '# Test email',
       'If you are reading this, alerts will reach you.',
@@ -287,7 +293,7 @@ if (process.argv.includes('--test-email')) {
       `Sent ${formatLondon(new Date())}.`,
     ],
   });
-  console.log('Test email sent.');
+  console.log(`Test alert sent via ${channel()}.`);
 } else {
   await main();
 }

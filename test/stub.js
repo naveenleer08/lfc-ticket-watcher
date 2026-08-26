@@ -37,7 +37,18 @@ function fixtureFor(url) {
   throw new Error(`No fixture for ${url}`);
 }
 
-globalThis.fetch = async (url) => {
+globalThis.fetch = async (url, init) => {
+  // Intercept the GitHub API so alert payloads can be inspected without
+  // touching a real repository.
+  if (String(url).includes('api.github.com')) {
+    const body = JSON.parse(init.body);
+    console.log('--- would open GitHub issue ---');
+    console.log('TITLE:', body.title);
+    console.log(body.body);
+    console.log('--- end ---');
+    return { ok: true, status: 201, text: async () => '{}' };
+  }
+
   const html = apply(readFileSync(join(FIXTURES, fixtureFor(String(url))), 'utf8'));
   return {
     ok: true,

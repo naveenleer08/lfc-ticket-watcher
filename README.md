@@ -1,6 +1,6 @@
 # LFC Ticket Watcher
 
-Watches every Liverpool men's home fixture on liverpoolfc.com and emails you when an
+Watches every Liverpool men's home fixture on liverpoolfc.com and alerts you when an
 **Additional Members Sale** appears, when registration opens, and before the sale starts.
 
 It does not buy tickets and does not log into your account. It reads the same public
@@ -22,7 +22,7 @@ deadlines. Registration is usually open for about 23 hours — easy to miss enti
 but not a race. The sale itself is first come, first served, and **if you registered,
 LFC email you a unique access link a few days beforehand**.
 
-## What it emails you
+## What it tells you
 
 | Trigger | Priority |
 |---|---|
@@ -33,58 +33,62 @@ LFC email you a unique access link a few days beforehand**.
 | It can no longer read the LFC pages | high |
 | Nothing has happened for a week | low |
 
-That last two matter: if the site's markup changes, you get told, rather than being
+Those last two matter: if the site's markup changes, you get told, rather than being
 left with a silence that looks like good news. While the watcher is broken it will
 never send the reassuring weekly "nothing new" email.
 
 ## Setup
 
-### 1. Put it on GitHub
-
-Create a repository and push this folder to it.
+One step: put it on GitHub. There is nothing to configure and no password anywhere.
 
 ```bash
-git init && git add -A && git commit -m "LFC ticket watcher"
 git branch -M main
 git remote add origin https://github.com/YOUR-USERNAME/lfc-ticket-watcher.git
 git push -u origin main
 ```
 
-**Make the repository public.** Nothing sensitive lives in it — your email address and
-mail password are stored as encrypted GitHub Secrets, never in the code. Public repos
-get unlimited free Actions minutes; private repos get 2,000/month, and checking every
-15 minutes uses roughly 2,900. If you would rather keep it private, change the cron in
+**Make the repository public.** Nothing sensitive is in it, and public repos get
+unlimited free Actions minutes. Private repos get 2,000/month and checking every 15
+minutes needs about 2,900 — if you would rather keep it private, change the cron in
 `.github/workflows/watch.yml` to `*/30 * * * *` to stay inside the allowance.
 
-### 2. Create a mail app password
+### How the alerts reach you
 
-If you're sending through Gmail, turn on 2-Step Verification, then create an **App
-Password** at <https://myaccount.google.com/apppasswords>. This is a 16-character
-password specific to this app; it is not your Google password and can be revoked
-independently.
+Each alert is opened as a **GitHub issue**, using the token GitHub gives every Actions
+run automatically. You watch your own repositories by default, so GitHub emails you when
+one appears. The issue title carries the urgency, and the body has the sale blurb and a
+link straight to the match page.
 
-Do this yourself and paste it straight into GitHub in the next step — it should not be
-written into any file or shared with anyone.
+Worth checking once: **Settings → Notifications** on GitHub, that "Email" is ticked under
+Watching, and that the address there is one you actually read. It is worth sending
+yourself a test (below) and confirming the mail arrives rather than assuming.
 
-### 3. Add the secrets
+### Prove it works
 
-In the repository: **Settings → Secrets and variables → Actions → New repository secret**.
+**Actions → Watch LFC tickets → Run workflow**, tick *Send a test alert*, run it. An issue
+should appear, and an email with it.
+
+Then run it again without the tick. The first real run opens a single issue summarising
+every home fixture and where it stands; after that you only hear about changes.
+
+### If you would rather have real emails
+
+The GitHub issue route needs nothing, but the subject lines are plainer and it depends on
+your GitHub notification settings. To send proper email instead, add these repository
+secrets (**Settings → Secrets and variables → Actions**) and the watcher switches over
+automatically:
 
 | Secret | Value |
 |---|---|
 | `SMTP_HOST` | `smtp.gmail.com` |
 | `SMTP_PORT` | `587` |
-| `SMTP_USER` | the Gmail address you're sending from |
-| `SMTP_PASS` | the app password from step 2 |
+| `SMTP_USER` | the address you're sending from |
+| `SMTP_PASS` | a Gmail [App Password](https://myaccount.google.com/apppasswords), not your Google password |
 | `MAIL_TO` | where alerts should land |
-| `MAIL_FROM` | optional; defaults to `SMTP_USER` |
 
-### 4. Prove the email works
-
-**Actions → Watch LFC tickets → Run workflow**, tick *Send a test email*, run it.
-
-Then run it again without the tick. The first real run sends a one-off summary of every
-home fixture and where it currently stands, and from then on you only hear about changes.
+Create the app password yourself and paste it straight into GitHub — it should not be
+written into a file or shared with anyone. Leave `SMTP_HOST` unset and the issue route
+stays in use.
 
 ## Tuning
 
@@ -103,25 +107,20 @@ npm install
 npm run check
 ```
 
-`npm run check` does a full check and prints the emails it *would* send without sending
-anything. For real sends locally, put the same variables in a `.env` and load it.
+`npm run check` does a full check and prints the alerts it *would* raise without sending
+anything.
 
 ## Tests
 
-The alert logic is exercised against saved copies of the real pages, so situations that
-can't be reproduced on demand — a window actually opening, a time being moved, the
-markup breaking — are still covered.
-
 ```bash
-node --import ./test/stub.js src/index.js --dry-run
+npm test
 ```
 
-`LFC_TEST_SUB` rewrites the served HTML to simulate a change:
-
-```bash
-LFC_TEST_SUB="statusIndicator--register-soon=>statusIndicator--register-now" \
-  node --import ./test/stub.js src/index.js --dry-run
-```
+The alert logic is replayed against saved copies of the real pages, so situations that
+can't be reproduced on demand are still covered: a registration window actually opening,
+a published time moving, a sale being announced, and the markup breaking. The last of
+those matters most — it checks that a broken watcher says so instead of quietly
+reporting that all is well.
 
 ## How it holds up
 

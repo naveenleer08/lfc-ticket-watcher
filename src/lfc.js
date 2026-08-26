@@ -51,6 +51,23 @@ function textOf($el) {
   return $el.text().replace(/\s+/g, ' ').trim();
 }
 
+// The sale blurb is several paragraphs with no whitespace between the tags, so
+// a plain .text() runs them together ("...their interest.Registration will
+// open..."). Break on block boundaries first — this text is the most useful
+// part of an alert and it has to be readable.
+function blockTextOf($, $el) {
+  if (!$el.length) return '';
+  const clone = $el.clone();
+  clone.find('br').replaceWith('\n');
+  clone.find('p, div, li, h1, h2, h3, h4, h5').each((_, e) => $(e).after('\n'));
+  return clone
+    .text()
+    .split('\n')
+    .map((line) => line.replace(/\s+/g, ' ').trim())
+    .filter(Boolean)
+    .join('\n');
+}
+
 export async function fetchMatch(slug) {
   const $ = cheerio.load(await get(`/tickets/match/${slug}`));
 
@@ -73,7 +90,7 @@ export async function fetchMatch(slug) {
       statusLabel: statusLabel || null,
       when,
       whenText: textOf($time) || null,
-      body: textOf($el.find('[data-testid="ticketing-accordion-list-item__body"]').first()).slice(0, 1200),
+      body: blockTextOf($, $el.find('[data-testid="ticketing-accordion-list-item__body"]').first()).slice(0, 1200),
     });
   });
 

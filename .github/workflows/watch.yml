@@ -8,13 +8,14 @@ on:
     - cron: '*/15 * * * *'
   workflow_dispatch:
     inputs:
-      test_email:
-        description: 'Send a test email instead of checking'
+      test:
+        description: 'Send a test alert instead of checking'
         type: boolean
         default: false
 
 permissions:
-  contents: write
+  contents: write   # commit state.json back
+  issues: write     # open an issue when there is something to tell you
 
 # Never let two runs update state.json at once.
 concurrency:
@@ -24,6 +25,20 @@ concurrency:
 jobs:
   watch:
     runs-on: ubuntu-latest
+
+    env:
+      # Alerts arrive as GitHub issues by default, using this built-in token.
+      # You watch your own repositories, so GitHub emails you when one opens.
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # Optional: set the SMTP_* secrets to get real emails instead. If
+      # SMTP_HOST is unset these are all empty and the issue route is used.
+      SMTP_HOST: ${{ secrets.SMTP_HOST }}
+      SMTP_PORT: ${{ secrets.SMTP_PORT }}
+      SMTP_USER: ${{ secrets.SMTP_USER }}
+      SMTP_PASS: ${{ secrets.SMTP_PASS }}
+      MAIL_TO: ${{ secrets.MAIL_TO }}
+      MAIL_FROM: ${{ secrets.MAIL_FROM }}
+
     steps:
       - uses: actions/checkout@v4
 
@@ -34,30 +49,16 @@ jobs:
 
       - run: npm ci
 
-      - name: Send test email
-        if: inputs.test_email
-        env:
-          SMTP_HOST: ${{ secrets.SMTP_HOST }}
-          SMTP_PORT: ${{ secrets.SMTP_PORT }}
-          SMTP_USER: ${{ secrets.SMTP_USER }}
-          SMTP_PASS: ${{ secrets.SMTP_PASS }}
-          MAIL_TO: ${{ secrets.MAIL_TO }}
-          MAIL_FROM: ${{ secrets.MAIL_FROM }}
-        run: node src/index.js --test-email
+      - name: Send test alert
+        if: inputs.test
+        run: node src/index.js --test
 
       - name: Check for ticket sales
-        if: ${{ !inputs.test_email }}
-        env:
-          SMTP_HOST: ${{ secrets.SMTP_HOST }}
-          SMTP_PORT: ${{ secrets.SMTP_PORT }}
-          SMTP_USER: ${{ secrets.SMTP_USER }}
-          SMTP_PASS: ${{ secrets.SMTP_PASS }}
-          MAIL_TO: ${{ secrets.MAIL_TO }}
-          MAIL_FROM: ${{ secrets.MAIL_FROM }}
+        if: ${{ !inputs.test }}
         run: node src/index.js
 
       - name: Save what we saw
-        if: ${{ !inputs.test_email }}
+        if: ${{ !inputs.test }}
         run: |
           if [ -n "$(git status --porcelain state.json)" ]; then
             git config user.name  "lfc-ticket-watcher"
