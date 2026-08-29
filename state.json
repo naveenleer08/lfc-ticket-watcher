@@ -6,8 +6,8 @@
       "url": "https://www.liverpoolfc.com/tickets/match/liverpool-v-nottingham-forest-english-premier-league-20260829",
       "items": {
         "additional members sale": {
-          "statusSlug": "check-availability",
-          "statusLabel": "CHECK AVAILABILITY",
+          "statusSlug": "sale-ended",
+          "statusLabel": "SALE ENDED",
           "when": null,
           "title": "Additional Members Sale"
         },
