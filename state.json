@@ -1,24 +1,5 @@
 {
   "matches": {
-    "liverpool-v-nottingham-forest-english-premier-league-20260829": {
-      "heading": "Liverpool v Nottingham Forest",
-      "kickoff": "SAT 29 AUG 12:30",
-      "url": "https://www.liverpoolfc.com/tickets/match/liverpool-v-nottingham-forest-english-premier-league-20260829",
-      "items": {
-        "additional members sale": {
-          "statusSlug": "sale-ended",
-          "statusLabel": "SALE ENDED",
-          "when": null,
-          "title": "Additional Members Sale"
-        },
-        "additional members sale registration": {
-          "statusSlug": "registration-ended",
-          "statusLabel": "REGISTRATION ENDED",
-          "when": null,
-          "title": "Additional Members Sale Registration"
-        }
-      }
-    },
     "liverpool-v-fulham-2026-27": {
       "heading": "Liverpool v Fulham",
       "kickoff": "SAT 12 SEP 15:00",
