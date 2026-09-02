@@ -6,8 +6,8 @@
       "url": "https://www.liverpoolfc.com/tickets/match/liverpool-v-fulham-2026-27",
       "items": {
         "additional members sale registration": {
-          "statusSlug": "register-now",
-          "statusLabel": "REGISTER NOW",
+          "statusSlug": "registration-ended",
+          "statusLabel": "REGISTRATION ENDED",
           "when": "2026-09-01T11:00",
           "title": "Additional Members Sale Registration"
         },
