@@ -1,18 +1,5 @@
 {
   "matches": {
-    "liverpool-v-fulham-2026-27": {
-      "heading": "Liverpool v Fulham",
-      "kickoff": "SAT 12 SEP 15:00",
-      "url": "https://www.liverpoolfc.com/tickets/match/liverpool-v-fulham-2026-27",
-      "items": {
-        "additional members sale": {
-          "statusSlug": "buy-now",
-          "statusLabel": "BUY NOW",
-          "when": "2026-09-07T11:00",
-          "title": "Additional Members Sale"
-        }
-      }
-    },
     "liverpool-v-manchester-city-english-premier-league-20261011": {
       "heading": "Liverpool v Manchester City",
       "kickoff": "SUN 11 OCT 16:30",
@@ -24,15 +11,21 @@
       "kickoff": "WED 9 SEP 20:00",
       "url": "https://www.liverpoolfc.com/tickets/match/liverpool-v-atletico-de-madrid-uefa-champions-league-20260909",
       "items": {}
+    },
+    "liverpool-v-fulham-english-premier-league-20260912": {
+      "heading": "Liverpool v Fulham",
+      "kickoff": "SAT 12 SEP 15:00",
+      "url": "https://www.liverpoolfc.com/tickets/match/liverpool-v-fulham-english-premier-league-20260912",
+      "items": {
+        "additional members sale": {
+          "statusSlug": "buy-now",
+          "statusLabel": "BUY NOW",
+          "when": "2026-09-07T11:00",
+          "title": "Additional Members Sale"
+        }
+      }
     }
   },
-  "sentAlerts": {
-    "liverpool-v-fulham-2026-27::additional members sale registration::lead1440": "2026-08-31T10:02:26.096Z",
-    "liverpool-v-fulham-2026-27::additional members sale registration::lead60": "2026-09-01T09:03:23.591Z",
-    "liverpool-v-fulham-2026-27::additional members sale registration::lead10": "2026-09-01T09:51:11.292Z",
-    "liverpool-v-fulham-2026-27::additional members sale::lead1440": "2026-09-06T10:03:32.899Z",
-    "liverpool-v-fulham-2026-27::additional members sale::lead60": "2026-09-07T09:03:53.252Z",
-    "liverpool-v-fulham-2026-27::additional members sale::lead10": "2026-09-07T09:52:04.401Z"
-  },
+  "sentAlerts": {},
   "lastHeartbeat": "2026-09-02T09:23:58.327Z"
 }
