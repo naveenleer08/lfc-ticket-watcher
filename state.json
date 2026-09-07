@@ -5,15 +5,9 @@
       "kickoff": "SAT 12 SEP 15:00",
       "url": "https://www.liverpoolfc.com/tickets/match/liverpool-v-fulham-2026-27",
       "items": {
-        "additional members sale registration": {
-          "statusSlug": "registration-ended",
-          "statusLabel": "REGISTRATION ENDED",
-          "when": "2026-09-01T11:00",
-          "title": "Additional Members Sale Registration"
-        },
         "additional members sale": {
-          "statusSlug": "on-sale-soon",
-          "statusLabel": "ON SALE SOON",
+          "statusSlug": "buy-now",
+          "statusLabel": "BUY NOW",
           "when": "2026-09-07T11:00",
           "title": "Additional Members Sale"
         }
