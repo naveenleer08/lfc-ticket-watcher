@@ -12,8 +12,8 @@
       "url": "https://www.liverpoolfc.com/tickets/match/liverpool-v-fulham-english-premier-league-20260912",
       "items": {
         "additional members sale": {
-          "statusSlug": "buy-now",
-          "statusLabel": "BUY NOW",
+          "statusSlug": "sold-out",
+          "statusLabel": "SOLD OUT",
           "when": "2026-09-07T11:00",
           "title": "Additional Members Sale"
         }
