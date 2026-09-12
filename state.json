@@ -5,19 +5,6 @@
       "kickoff": "SUN 11 OCT 16:30",
       "url": "https://www.liverpoolfc.com/tickets/match/liverpool-v-manchester-city-english-premier-league-20261011",
       "items": {}
-    },
-    "liverpool-v-fulham-english-premier-league-20260912": {
-      "heading": "Liverpool v Fulham",
-      "kickoff": "SAT 12 SEP 15:00",
-      "url": "https://www.liverpoolfc.com/tickets/match/liverpool-v-fulham-english-premier-league-20260912",
-      "items": {
-        "additional members sale": {
-          "statusSlug": "sold-out",
-          "statusLabel": "SOLD OUT",
-          "when": "2026-09-07T11:00",
-          "title": "Additional Members Sale"
-        }
-      }
     }
   },
   "sentAlerts": {},
