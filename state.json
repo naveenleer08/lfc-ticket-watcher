@@ -4,7 +4,20 @@
       "heading": "Liverpool v Manchester City",
       "kickoff": "SUN 11 OCT 16:30",
       "url": "https://www.liverpoolfc.com/tickets/match/liverpool-v-manchester-city-english-premier-league-20261011",
-      "items": {}
+      "items": {
+        "additional members sale registration": {
+          "statusSlug": "register-soon",
+          "statusLabel": "REGISTER SOON",
+          "when": "2026-09-28T11:00",
+          "title": "Additional Members Sale Registration"
+        },
+        "additional members sale": {
+          "statusSlug": "on-sale-soon",
+          "statusLabel": "ON SALE SOON",
+          "when": "2026-10-05T11:00",
+          "title": "Additional Members Sale"
+        }
+      }
     },
     "liverpool-v-brighton-and-hove-albion-english-premier-league-20261025": {
       "heading": "Liverpool v Brighton and Hove Albion",
