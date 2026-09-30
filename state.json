@@ -5,17 +5,17 @@
       "kickoff": "SUN 11 OCT 16:30",
       "url": "https://www.liverpoolfc.com/tickets/match/liverpool-v-manchester-city-english-premier-league-20261011",
       "items": {
-        "additional members sale registration": {
-          "statusSlug": "registration-ended",
-          "statusLabel": "REGISTRATION ENDED",
-          "when": "2026-09-28T11:00",
-          "title": "Additional Members Sale Registration"
-        },
         "additional members sale": {
           "statusSlug": "on-sale-soon",
           "statusLabel": "ON SALE SOON",
           "when": "2026-10-05T11:00",
           "title": "Additional Members Sale"
+        },
+        "additional members sale registration": {
+          "statusSlug": "registration-ended",
+          "statusLabel": "REGISTRATION ENDED",
+          "when": "2026-09-28T11:00",
+          "title": "Additional Members Sale Registration"
         }
       }
     },
@@ -41,5 +41,5 @@
   "sentAlerts": {
     "liverpool-v-manchester-city-english-premier-league-20261011::additional members sale registration::lead1440": "2026-09-27T14:09:45.418Z"
   },
-  "lastHeartbeat": "2026-09-23T09:50:26.088Z"
+  "lastHeartbeat": "2026-09-30T15:27:38.166Z"
 }
