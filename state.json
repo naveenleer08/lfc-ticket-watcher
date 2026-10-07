@@ -6,8 +6,8 @@
       "url": "https://www.liverpoolfc.com/tickets/match/liverpool-v-manchester-city-english-premier-league-20261011",
       "items": {
         "additional members sale": {
-          "statusSlug": "buy-now",
-          "statusLabel": "BUY NOW",
+          "statusSlug": "check-availability",
+          "statusLabel": "CHECK AVAILABILITY",
           "when": "2026-10-05T11:00",
           "title": "Additional Members Sale"
         },
