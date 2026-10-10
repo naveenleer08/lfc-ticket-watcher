@@ -24,6 +24,25 @@
       "kickoff": "SUN 1 NOV 16:30",
       "url": "https://www.liverpoolfc.com/tickets/match/liverpool-v-arsenal-english-premier-league-20261101",
       "items": {}
+    },
+    "liverpool-v-brighton-and-hove-albion-english-premier-league-20261025": {
+      "heading": "Liverpool v Brighton and Hove Albion",
+      "kickoff": "SUN 25 OCT 14:00",
+      "url": "https://www.liverpoolfc.com/tickets/match/liverpool-v-brighton-and-hove-albion-english-premier-league-20261025",
+      "items": {
+        "additional members sale registration": {
+          "statusSlug": "register-soon",
+          "statusLabel": "REGISTER SOON",
+          "when": "2026-10-12T11:00",
+          "title": "Additional Members Sale Registration"
+        },
+        "additional members sale": {
+          "statusSlug": "on-sale-soon",
+          "statusLabel": "ON SALE SOON",
+          "when": "2026-10-19T11:00",
+          "title": "Additional Members Sale"
+        }
+      }
     }
   },
   "sentAlerts": {
