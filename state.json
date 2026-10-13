@@ -31,8 +31,8 @@
       "url": "https://www.liverpoolfc.com/tickets/match/liverpool-v-brighton-and-hove-albion-english-premier-league-20261025",
       "items": {
         "additional members sale registration": {
-          "statusSlug": "register-now",
-          "statusLabel": "REGISTER NOW",
+          "statusSlug": "registration-ended",
+          "statusLabel": "REGISTRATION ENDED",
           "when": "2026-10-12T11:00",
           "title": "Additional Members Sale Registration"
         },
