@@ -43,10 +43,17 @@
           "title": "Additional Members Sale"
         }
       }
+    },
+    "liverpool-v-manchester-united-english-premier-league-20261122": {
+      "heading": "Liverpool v Manchester United",
+      "kickoff": "SUN 22 NOV 16:30",
+      "url": "https://www.liverpoolfc.com/tickets/match/liverpool-v-manchester-united-english-premier-league-20261122",
+      "items": {}
     }
   },
   "sentAlerts": {
-    "liverpool-v-brighton-and-hove-albion-english-premier-league-20261025::additional members sale registration::lead1440": "2026-10-11T10:25:23.221Z"
+    "liverpool-v-brighton-and-hove-albion-english-premier-league-20261025::additional members sale registration::lead1440": "2026-10-11T10:25:23.221Z",
+    "liverpool-v-brighton-and-hove-albion-english-premier-league-20261025::additional members sale::lead1440": "2026-10-18T13:23:34.334Z"
   },
   "lastHeartbeat": "2026-10-15T00:50:52.660Z"
 }
