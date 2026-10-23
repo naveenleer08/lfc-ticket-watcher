@@ -11,17 +11,17 @@
       "kickoff": "SUN 1 NOV 16:30",
       "url": "https://www.liverpoolfc.com/tickets/match/liverpool-v-arsenal-english-premier-league-20261101",
       "items": {
-        "additional members sale registration": {
-          "statusSlug": "registration-ended",
-          "statusLabel": "REGISTRATION ENDED",
-          "when": "2026-10-20T11:00",
-          "title": "Additional Members Sale Registration"
-        },
         "additional members sale": {
           "statusSlug": "on-sale-soon",
           "statusLabel": "ON SALE SOON",
           "when": "2026-10-26T11:00",
           "title": "Additional Members Sale"
+        },
+        "additional members sale registration": {
+          "statusSlug": "registration-ended",
+          "statusLabel": "REGISTRATION ENDED",
+          "when": "2026-10-20T11:00",
+          "title": "Additional Members Sale Registration"
         }
       }
     },
