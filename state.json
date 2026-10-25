@@ -25,35 +25,20 @@
         }
       }
     },
-    "liverpool-v-brighton-and-hove-albion-english-premier-league-20261025": {
-      "heading": "Liverpool v Brighton & Hove Albion",
-      "kickoff": "SUN 25 OCT 14:00",
-      "url": "https://www.liverpoolfc.com/tickets/match/liverpool-v-brighton-and-hove-albion-english-premier-league-20261025",
-      "items": {
-        "additional members sale registration": {
-          "statusSlug": "registration-ended",
-          "statusLabel": "REGISTRATION ENDED",
-          "when": "2026-10-12T11:00",
-          "title": "Additional Members Sale Registration"
-        },
-        "additional members sale": {
-          "statusSlug": "sale-ended",
-          "statusLabel": "SALE ENDED",
-          "when": "2026-10-19T11:00",
-          "title": "Additional Members Sale"
-        }
-      }
-    },
     "liverpool-v-manchester-united-english-premier-league-20261122": {
       "heading": "Liverpool v Manchester United",
       "kickoff": "SUN 22 NOV 16:30",
       "url": "https://www.liverpoolfc.com/tickets/match/liverpool-v-manchester-united-english-premier-league-20261122",
       "items": {}
+    },
+    "liverpool-v-sunderland-english-premier-league-20261202": {
+      "heading": "Liverpool v Sunderland",
+      "kickoff": "WED 2 DEC 19:30",
+      "url": "https://www.liverpoolfc.com/tickets/match/liverpool-v-sunderland-english-premier-league-20261202",
+      "items": {}
     }
   },
   "sentAlerts": {
-    "liverpool-v-brighton-and-hove-albion-english-premier-league-20261025::additional members sale registration::lead1440": "2026-10-11T10:25:23.221Z",
-    "liverpool-v-brighton-and-hove-albion-english-premier-league-20261025::additional members sale::lead1440": "2026-10-18T13:23:34.334Z",
     "liverpool-v-arsenal-english-premier-league-20261101::additional members sale registration::lead1440": "2026-10-19T13:03:26.671Z",
     "liverpool-v-arsenal-english-premier-league-20261101::additional members sale::lead1440": "2026-10-25T11:51:46.378Z"
   },
