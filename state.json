@@ -37,8 +37,8 @@
           "title": "Additional Members Sale Registration"
         },
         "additional members sale": {
-          "statusSlug": "buy-now",
-          "statusLabel": "BUY NOW",
+          "statusSlug": "sale-ended",
+          "statusLabel": "SALE ENDED",
           "when": "2026-10-19T11:00",
           "title": "Additional Members Sale"
         }
@@ -54,7 +54,8 @@
   "sentAlerts": {
     "liverpool-v-brighton-and-hove-albion-english-premier-league-20261025::additional members sale registration::lead1440": "2026-10-11T10:25:23.221Z",
     "liverpool-v-brighton-and-hove-albion-english-premier-league-20261025::additional members sale::lead1440": "2026-10-18T13:23:34.334Z",
-    "liverpool-v-arsenal-english-premier-league-20261101::additional members sale registration::lead1440": "2026-10-19T13:03:26.671Z"
+    "liverpool-v-arsenal-english-premier-league-20261101::additional members sale registration::lead1440": "2026-10-19T13:03:26.671Z",
+    "liverpool-v-arsenal-english-premier-league-20261101::additional members sale::lead1440": "2026-10-25T11:51:46.378Z"
   },
   "lastHeartbeat": "2026-10-22T02:24:51.653Z"
 }
