@@ -12,8 +12,8 @@
       "url": "https://www.liverpoolfc.com/tickets/match/liverpool-v-arsenal-english-premier-league-20261101",
       "items": {
         "additional members sale": {
-          "statusSlug": "on-sale-soon",
-          "statusLabel": "ON SALE SOON",
+          "statusSlug": "buy-now",
+          "statusLabel": "BUY NOW",
           "when": "2026-10-26T11:00",
           "title": "Additional Members Sale"
         },
