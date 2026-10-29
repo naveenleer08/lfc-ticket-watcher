@@ -23,7 +23,20 @@
       "heading": "Liverpool v Manchester United",
       "kickoff": "SUN 22 NOV 16:30",
       "url": "https://www.liverpoolfc.com/tickets/match/liverpool-v-manchester-united-english-premier-league-20261122",
-      "items": {}
+      "items": {
+        "additional members sale registration": {
+          "statusSlug": "register-soon",
+          "statusLabel": "REGISTER SOON",
+          "when": "2026-11-06T11:00",
+          "title": "Additional Members Sale Registration"
+        },
+        "additional members sale": {
+          "statusSlug": "on-sale-soon",
+          "statusLabel": "ON SALE SOON",
+          "when": "2026-11-16T11:00",
+          "title": "Additional Members Sale"
+        }
+      }
     },
     "liverpool-v-sunderland-english-premier-league-20261202": {
       "heading": "Liverpool v Sunderland",
