@@ -10,12 +10,6 @@
           "statusLabel": "BUY NOW",
           "when": "2026-10-26T11:00",
           "title": "Additional Members Sale"
-        },
-        "additional members sale registration": {
-          "statusSlug": "registration-ended",
-          "statusLabel": "REGISTRATION ENDED",
-          "when": "2026-10-20T11:00",
-          "title": "Additional Members Sale Registration"
         }
       }
     },
