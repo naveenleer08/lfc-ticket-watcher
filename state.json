@@ -1,18 +1,5 @@
 {
   "matches": {
-    "liverpool-v-arsenal-english-premier-league-20261101": {
-      "heading": "Liverpool v Arsenal",
-      "kickoff": "SUN 1 NOV 16:30",
-      "url": "https://www.liverpoolfc.com/tickets/match/liverpool-v-arsenal-english-premier-league-20261101",
-      "items": {
-        "additional members sale": {
-          "statusSlug": "buy-now",
-          "statusLabel": "BUY NOW",
-          "when": "2026-10-26T11:00",
-          "title": "Additional Members Sale"
-        }
-      }
-    },
     "liverpool-v-manchester-united-english-premier-league-20261122": {
       "heading": "Liverpool v Manchester United",
       "kickoff": "SUN 22 NOV 16:30",
@@ -37,11 +24,20 @@
       "kickoff": "WED 2 DEC 19:30",
       "url": "https://www.liverpoolfc.com/tickets/match/liverpool-v-sunderland-english-premier-league-20261202",
       "items": {}
+    },
+    "liverpool-v-leeds-2026-27": {
+      "heading": "Liverpool v Leeds United",
+      "kickoff": "SAT 12 DEC 15:00",
+      "url": "https://www.liverpoolfc.com/tickets/match/liverpool-v-leeds-2026-27",
+      "items": {}
+    },
+    "liverpool-v-tottenham-hotspur-english-premier-league-20261219": {
+      "heading": "Liverpool v Tottenham Hotspur",
+      "kickoff": "SAT 19 DEC 17:30",
+      "url": "https://www.liverpoolfc.com/tickets/match/liverpool-v-tottenham-hotspur-english-premier-league-20261219",
+      "items": {}
     }
   },
-  "sentAlerts": {
-    "liverpool-v-arsenal-english-premier-league-20261101::additional members sale registration::lead1440": "2026-10-19T13:03:26.671Z",
-    "liverpool-v-arsenal-english-premier-league-20261101::additional members sale::lead1440": "2026-10-25T11:51:46.378Z"
-  },
+  "sentAlerts": {},
   "lastHeartbeat": "2026-10-29T02:50:39.641Z"
 }
