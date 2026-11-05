@@ -30,14 +30,10 @@
       "kickoff": "SAT 12 DEC 15:00",
       "url": "https://www.liverpoolfc.com/tickets/match/liverpool-v-leeds-2026-27",
       "items": {}
-    },
-    "liverpool-v-bournemouth-english-league-cup-20261216": {
-      "heading": "Liverpool v Bournemouth",
-      "kickoff": "WED 16 DEC 20:00",
-      "url": "https://www.liverpoolfc.com/tickets/match/liverpool-v-bournemouth-english-league-cup-20261216",
-      "items": {}
     }
   },
-  "sentAlerts": {},
+  "sentAlerts": {
+    "liverpool-v-manchester-united-english-premier-league-20261122::additional members sale registration::lead1440": "2026-11-05T16:51:07.034Z"
+  },
   "lastHeartbeat": "2026-11-05T08:42:41.982Z"
 }
