@@ -25,8 +25,8 @@
       "url": "https://www.liverpoolfc.com/tickets/match/liverpool-v-sunderland-english-premier-league-20261202",
       "items": {
         "additional members sale registration": {
-          "statusSlug": "register-soon",
-          "statusLabel": "REGISTER SOON",
+          "statusSlug": "register-now",
+          "statusLabel": "REGISTER NOW",
           "when": "2026-11-17T11:00",
           "title": "Additional Members Sale Registration"
         },
