@@ -55,12 +55,6 @@
       "kickoff": "SAT 19 DEC 17:30",
       "url": "https://www.liverpoolfc.com/tickets/match/liverpool-v-tottenham-hotspur-english-premier-league-20261219",
       "items": {}
-    },
-    "liverpool-v-coventry-english-premier-league-20270201": {
-      "heading": "Liverpool v Coventry City",
-      "kickoff": "SAT 2 JAN 15:00",
-      "url": "https://www.liverpoolfc.com/tickets/match/liverpool-v-coventry-english-premier-league-20270201",
-      "items": {}
     }
   },
   "sentAlerts": {
@@ -68,5 +62,5 @@
     "liverpool-v-manchester-united-english-premier-league-20261122::additional members sale::lead1440": "2026-11-15T14:42:26.060Z",
     "liverpool-v-sunderland-english-premier-league-20261202::additional members sale registration::lead1440": "2026-11-16T11:03:23.299Z"
   },
-  "lastHeartbeat": "2026-11-12T16:55:35.612Z"
+  "lastHeartbeat": "2026-11-19T17:39:35.738Z"
 }
