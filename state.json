@@ -12,8 +12,8 @@
           "title": "Additional Members Sale Registration"
         },
         "additional members sale": {
-          "statusSlug": "on-sale-soon",
-          "statusLabel": "ON SALE SOON",
+          "statusSlug": "buy-now",
+          "statusLabel": "BUY NOW",
           "when": "2026-11-23T11:00",
           "title": "Additional Members Sale"
         }
@@ -23,7 +23,20 @@
       "heading": "Liverpool v Leeds United",
       "kickoff": "SAT 12 DEC 15:00",
       "url": "https://www.liverpoolfc.com/tickets/match/liverpool-v-leeds-2026-27",
-      "items": {}
+      "items": {
+        "additional members sale registration": {
+          "statusSlug": "register-soon",
+          "statusLabel": "REGISTER SOON",
+          "when": "2026-11-30T11:00",
+          "title": "Additional Members Sale Registration"
+        },
+        "additional members sale": {
+          "statusSlug": "on-sale-soon",
+          "statusLabel": "ON SALE SOON",
+          "when": "2026-12-07T11:00",
+          "title": "Additional Members Sale"
+        }
+      }
     },
     "liverpool-v-bournemouth-english-league-cup-20261216": {
       "heading": "Liverpool v Bournemouth",
